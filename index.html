@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Azure Deployment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: #0b1020;
+            --card: #141b2d;
+            --primary: #60a5fa;
+            --secondary: #a78bfa;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            border-bottom: 1px solid #ffffff12;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 12%;
+            background:
+                radial-gradient(circle at 80% 20%,
+                    #6366f125,
+                    transparent 35%);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 15px;
+            border: 1px solid #60a5fa55;
+            border-radius: 30px;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 7vw, 76px);
+            line-height: 1.15;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            background: linear-gradient(90deg,
+                    var(--primary),
+                    var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 600px;
+            font-size: 17px;
+            margin-bottom: 32px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: var(--primary);
+            color: #0b1020;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px #60a5fa35;
+        }
+
+        section {
+            padding: 75px 10%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            margin-bottom: 35px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,
+                    minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #ffffff12;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #60a5fa66;
+        }
+
+        .card .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about-box {
+            background: linear-gradient(135deg,
+                    #172554,
+                    #1e1b4b);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid #ffffff15;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #86efac;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #4ade8080;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 15px;
+            border-top: 1px solid #ffffff12;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 18px 6%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 70px 7%;
+                min-height: 75vh;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">MyPortfolio.</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="badge">✦ Welcome to My Website</div>
+
+        <h1>
+            Building Ideas Into
+            <span>Digital Experiences.</span>
+        </h1>
+
+        <p>
+            Hello! I'm a student passionate about technology,
+            information systems, and digital innovation.
+            This website is a simple portfolio project deployed
+            using Microsoft Azure.
+        </p>
+
+        <a href="#about" class="button">
+            Explore My Website →
+        </a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About This Project</h2>
+
+        <p class="section-description">
+            A simple website built with fundamental web technologies.
+        </p>
+
+        <div class="about-box">
+            <h3>My First Azure Deployment 🚀</h3>
+
+            <p>
+                This project demonstrates how a static website can be
+                built using HTML, CSS, and JavaScript, then published
+                online through Microsoft Azure Static Web Apps.
+                The goal is to understand the fundamentals of cloud
+                deployment and web hosting.
+            </p>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Website ready for deployment
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technologies</h2>
+
+        <p class="section-description">
+            The technologies behind this website.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>HTML5</h3>
+                <p>
+                    Structures the content and layout of the website.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>CSS3</h3>
+                <p>
+                    Creates the visual design, responsive layout,
+                    and interactive hover effects.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">☁️</div>
+                <h3>Microsoft Azure</h3>
+                <p>
+                    Hosts the website online using cloud infrastructure
+                    and supports automated deployment workflows.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © <span id="year"></span> MyPortfolio.
+            Built for learning and cloud deployment.
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        console.log("Website loaded successfully!");
+    </script>
+
+</body>
+
+</html>
